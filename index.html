@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Goku vs Cell</title>
+</head>
+
+<body>
+    <style type="text/css">
+        #namek {
+            background-image: url("namek.jpg");
+            width: 850px;
+            height: 600px;
+        }
+
+        #goku {
+            background-image: url("goku.png");
+            width: 45px;
+            height: 60px;
+            position: absolute;
+            top: 250px;
+            left: 150px;
+        }
+
+        #minicell {
+            background-image: url("minicell.png");
+            width: 45px;
+            height: 50px;
+            position: absolute;
+            top: 250px;
+            left: 800px;
+        }
+
+        .cuadrovidacell {
+            background-image: url("cuadrovidaminicell.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            left: 660px;
+        }
+
+        .vidacell {
+            background-image: url("barravidaminicell.png");
+            width: 175px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            left: 660px;
+        }
+
+        .cuadrovidagoku {
+            background-image: url("cuadrovidagoku.png");
+            width: 175px;
+            height: 30px;
+            position: absolute;
+            top: 150px;
+            left: 68px;
+        }
+
+        .vidagoku {
+            background-image: url("barravidagoku.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .cuadrovidagoku {
+            background-image: url("cuadrovidagoku.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .gokuleft {
+            width: 62px;
+            height: 43px;
+        }
+
+        .gokuup {
+            width: 45px;
+            height: 60px;
+        }
+    </style>
+    <div id="namek">
+        <div id="goku"></div>
+        <div class="goku" ;style="left: 150px; top: 150px"></div>
+
+
+        <div id="minicell"></div>
+        <div class="minicell"></div>
+
+
+        <div id="vidacell"></div>
+        <div class="vidacell"></div>
+
+        <div id="cuadrovidacell"></div>
+        <div class="cuadrovidacell"></div>
+
+
+        <div id="vidagoku"></div>
+        <div class="vidagoku"></div>
+
+        <div id="cuadrovidagoku"></div>
+        <div class="cuadrovidagoku"></div>
+
+
+        <script type="text/javascript">
+
+            var leftValue = 150;
+            var topValue = 250;
+            var run = 1;
+
+            function update() {
+                document.getElementById("goku").style.left = leftValue + "px";
+                document.getElementById("goku").style.top = topValue + "px";
+            }
+
+            document.onkeydown = function (e) {
+                console.log(e);
+
+                if (run == 1) {
+                    run = 2;
+                }
+                else if (run == 2) {
+                    run = 1;
+                }
+
+                if (e.keyCode == 37 && leftValue > 0) {
+                    leftValue = leftValue - 10;
+                    document.getElementById("goku").style.left = leftValue + "px";
+                    document.getElementById("goku").style.backgroundImage = "url('gokuleft.png')"
+                }
+                else if (e.keyCode == 39 && leftValue < 800) {
+                    leftValue = leftValue + 10;
+                    document.getElementById("goku").style.left = leftValue + "px";
+                    document.getElementById("goku").style.backgroundImage = "url('gokuright.png')"
+                }
+                else if (e.keyCode == 40 && topValue < 500) {
+                    topValue = topValue + 10;
+                    document.getElementById("goku").style.top = topValue + "px";
+                    document.getElementById("goku").style.backgroundImage = "url('gokudown.png')"
+                }
+                else if (e.keyCode == 38 && topValue > 0) {
+                    topValue = topValue - 10;
+                    document.getElementById("goku").style.top = topValue + "px";
+                    document.getElementById("goku").style.backgroundImage = "url('gokuup.png')"
+                }
+
+                update();
+            }
+
+        </script>
+</body>
+
+</html>
